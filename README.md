@@ -6,12 +6,12 @@
 
 ## Description
 
-_This application translates english into pig latin. Here are the specs:
+_This application translates english into pig latin. Here are the specs:_
 
-*This program does nothing to non alpha characters
+* This program does nothing to non alpha characters
   * 4$<%&!.,
   * 4$<%&!.,
-*This program does nothing to single letter consonants
+* This program does nothing to single letter consonants
   * b, r, l
   * b, r, l
 *
@@ -72,4 +72,4 @@ _This page was written primarily with Javascript._
 
 copyright (c) 2017 **_Jake Campa & Brendan Grubb_
 
-*This software is licensed under the GPL license.
+* This software is licensed under the GPL license.
