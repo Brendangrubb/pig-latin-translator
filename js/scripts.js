@@ -11,7 +11,7 @@ $(function() {
       case "I":
       case "O":
       case "U":
-      case "Y":
+        //case "Y":
         return true;
         break;
       default:
@@ -52,9 +52,15 @@ $(function() {
       default:
     }
     while (exitCounter === 0 && firstVowel < str.length) {
-      if (isVowel(str.charAt(firstVowel)) && str.charAt(0) !== "y" && str.charAt(0) !== "Y") {
+      if (firstVowel === 0 && (str.charAt(firstVowel) === "y" || str.charAt(firstVowel) === "Y")) {
+        firstVowel++
+      } else if (isVowel(str.charAt(firstVowel))) {
         //return addAy(str);
-        exitCounter++;
+        if (str.charAt(firstVowel - 1) === "q" || str.charAt(firstVowel - 1) === "Q") {
+          firstVowel++;
+        } else {
+          exitCounter++;
+        }
       } else {
         firstVowel++;
         //alert(firstVowel);
@@ -79,7 +85,7 @@ $(function() {
     //alert(userInput);
     var myArray = toArray(userInput);
     for (var i = 0; i < myArray.length; i++) {
-      translatedString = translatedString + " " + addAy(moveConsonant(myArray[i]));
+      translatedString = translatedString + " " + addAy(moveConsonant(myArray[i].trim()));
     }
     $("#output-text").text(translatedString);
 
