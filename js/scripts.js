@@ -74,15 +74,17 @@ $(function() {
 
   $("#pig-latin-input").submit(function(event) {
     event.preventDefault();
+    var translatedString = "";
     var userInput = $("#user-input").val();
     //alert(userInput);
-    $("#output-text").text(addAy(moveConsonant(userInput)));
+    var myArray = toArray(userInput);
+    for (var i = 0; i < myArray.length; i++) {
+      translatedString = translatedString + " " + addAy(moveConsonant(myArray[i]));
+    }
+    $("#output-text").text(translatedString);
 
     $("#output-text").show()
   })
 
 
 });
-
-
-//  alert(addAy(moveConsonant("#user-input")));
